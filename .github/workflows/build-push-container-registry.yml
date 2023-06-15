@@ -1,0 +1,43 @@
+name: Build Docker Image and Push to Evolution Container Registry
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout to the branch
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to cloud evolution container registry
+        uses: docker/login-action@v1
+        with:
+          registry: 887656ef-a8db-4cb2-9786-13f9b3686d34.cr.cloud.ru
+          username: ${{ secrets.EVO_CR_LOGIN }}
+          password: ${{ secrets.EVO_CR_PWD }}
+
+      - name: Build and push container image to cloud evolution registry
+        uses: docker/build-push-action@v4
+        with:
+          push: true
+          tags: 887656ef-a8db-4cb2-9786-13f9b3686d34.cr.cloud.ru/evolution-restapi-dotnet:${{ github.sha }}
+          file: ./restapi-dotnet/src/Dockerfile
+          context: ./
+          
+      - name: Build and push container image to cloud evolution registry
+        uses: docker/build-push-action@v4
+        with:
+          push: true
+          tags: 887656ef-a8db-4cb2-9786-13f9b3686d34.cr.cloud.ru/evolution-restapi-nodejs:${{ github.sha }}
+          file: ./restapi-nodejs/src/Dockerfile
+          context: ./
