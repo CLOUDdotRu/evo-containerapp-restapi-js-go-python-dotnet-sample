@@ -1,4 +1,4 @@
-# Примеры сценариев использования Serverless Containers + Container Registry
+# Сценарии использования API Gateway + Serverless Containers + Container Registry
 
 ## Пример использования Serverless Container для создания REST API
 
