@@ -1,7 +1,7 @@
 package main
 
 import (
-	"album-service/controllers/album"
+	"product-service/controllers/product"
 	"log"
 	"net/http"
 	"os"
@@ -25,7 +25,7 @@ func main() {
 		port = "3500"
 	}
 
-	router.HandleFunc("/albums", album.Get).Methods("GET")
+	router.HandleFunc("/products", album.Get).Methods("GET")
 
 	// listen and serve
 	log.Printf("will listen on %v\n", port)
