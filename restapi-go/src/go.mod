@@ -1,4 +1,4 @@
-module album-service
+module product-service
 
 go 1.17
 
