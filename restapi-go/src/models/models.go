@@ -14,7 +14,7 @@ type Product struct {
 	Category 	string  	`json:"category"`
 }
 
-func GetAlbums() []Product {
+func GetProducts() []Product {
 
 	var products []Product
 
