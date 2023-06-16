@@ -25,7 +25,7 @@ func main() {
 		port = "3500"
 	}
 
-	router.HandleFunc("/products", album.Get).Methods("GET")
+	router.HandleFunc("/products", product.Get).Methods("GET")
 
 	// listen and serve
 	log.Printf("will listen on %v\n", port)
