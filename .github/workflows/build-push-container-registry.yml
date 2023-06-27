@@ -67,6 +67,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: 887656ef-a8db-4cb2-9786-13f9b3686d34.cr.cloud.ru/evolution-restapi-go:${{ github.sha }}
+          tags: 887656ef-a8db-4cb2-9786-13f9b3686d34.cr.cloud.ru/evolution-restapigo:${{ github.sha }}
           file: ./restapi-go/src/Dockerfile
           context: ./restapi-go/src
