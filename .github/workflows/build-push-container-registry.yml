@@ -68,7 +68,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          platforms: linux/amd64,linux/amd64/v2,linux/arm64,linux/arm/v7
+          platforms: linux/amd64/v3,linux/386,linux/amd64,linux/amd64/v2,linux/arm64,linux/arm/v7
           tags: 887656ef-a8db-4cb2-9786-13f9b3686d34.cr.cloud.ru/evolution-restapigo:${{ github.sha }}
           file: ./restapi-go/src/Dockerfile
           context: ./restapi-go/src
