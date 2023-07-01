@@ -48,25 +48,11 @@ jobs:
           file: ./restapi-python/src/Dockerfile
           context: ./restapi-python/src
 
-      - name: Log in to cloud azure container registry
-        uses: docker/login-action@v1
-        with:
-          registry: bondcr.azurecr.io
-          username: "bondcr"
-          password: "kNFwbNGJbJxgsPWp1BvfkVx+/AIdH/BAe183K8gS05+ACRCU45A6"
-          
       - name: Go - Build and push container image to cloud evolution registry
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: bondcr.azurecr.io/evolution-restapi-go:${{ github.sha }}
-          file: ./restapi-go/src/Dockerfile
-          context: ./restapi-go/src
-          
-      - name: Go - Build and push container image to cloud evolution registry
-        uses: docker/build-push-action@v4
-        with:
-          push: true
+          platforms: linux/amd64/v3,linux/386,linux/amd64,linux/amd64/v2,linux/arm64,linux/arm/v7
           tags: 887656ef-a8db-4cb2-9786-13f9b3686d34.cr.cloud.ru/evolution-restapigo:${{ github.sha }}
           file: ./restapi-go/src/Dockerfile
           context: ./restapi-go/src
