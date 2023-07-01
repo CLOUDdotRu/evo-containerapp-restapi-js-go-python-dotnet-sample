@@ -4,7 +4,7 @@
 <img width="1065" alt="image" src="https://github.com/CLOUDdotRu/serverless-containers/assets/129149541/2d6f3ebe-2bdd-48ef-8376-f25d1bff8d9c">
 
 
-Пример кода на популярных языках программирования для [статьи документации](https://cloud.ru/ru/docs/container-registry-evolution/ug/topics/guides__auth.html). 
+Пример кода на популярных языках программирования для [статьи документации](https://cloud.ru/ru/docs/container-registry-evolution/ug/topics/tutorials__deploy-rest-api.html). 
 
 | [.NET](/restapi-dotnet) | [NodeJS](/restapi-nodejs) | [Python](/restapi-python) | [Go](/restapi-go) | 
 | ---  | --- | --- | --- |
