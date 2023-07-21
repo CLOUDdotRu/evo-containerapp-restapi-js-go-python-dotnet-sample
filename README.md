@@ -10,5 +10,5 @@
 | ---  | --- | --- | --- |
 
 ## Пример использования Container Registry в сценарии CI/CD для GitHub Actions
-
+В данном примере продемонстрирван процесс сборки и публикации контейнера в Evolution Container Registry средствами GitHub Actions 
 .github/workflows/build-push-container-registry.yml
