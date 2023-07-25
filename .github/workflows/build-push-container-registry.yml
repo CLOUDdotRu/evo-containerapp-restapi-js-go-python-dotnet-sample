@@ -36,33 +36,11 @@ jobs:
           image-ref: 887656ef-a8db-4cb2-9786-13f9b3686d34.cr.cloud.ru/evolution-restapi-dotnet:${{ github.sha }}
           format: 'sarif'
           output: 'trivy-results.sarif'
+        env:
+          TRIVY_USERNAME: ${{ secrets.EVO_CR_LOGIN }}
+          TRIVY_PASSWORD: ${{ secrets.EVO_CR_PWD }}
 
       - name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: 'trivy-results.sarif' 
-          
-      - name: NodeJS - Build and push container image to cloud evolution registry
-        uses: docker/build-push-action@v4
-        with:
-          push: true
-          tags: 887656ef-a8db-4cb2-9786-13f9b3686d34.cr.cloud.ru/evolution-restapi-nodejs:${{ github.sha }}
-          file: ./restapi-nodejs/src/Dockerfile
-          context: ./restapi-nodejs/src
-          
-      - name: Python - Build and push container image to cloud evolution registry
-        uses: docker/build-push-action@v4
-        with:
-          push: true
-          tags: 887656ef-a8db-4cb2-9786-13f9b3686d34.cr.cloud.ru/evolution-restapi-python:${{ github.sha }}
-          file: ./restapi-python/src/Dockerfile
-          context: ./restapi-python/src
-
-      - name: Go - Build and push container image to cloud evolution registry
-        uses: docker/build-push-action@v4
-        with:
-          push: true
-          platforms: linux/amd64
-          tags: 887656ef-a8db-4cb2-9786-13f9b3686d34.cr.cloud.ru/evolution-restapigo:${{ github.sha }}
-          file: ./restapi-go/src/Dockerfile
-          context: ./restapi-go/src
+          sarif_file: 'trivy-results.sarif'
