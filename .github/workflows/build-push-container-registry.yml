@@ -32,6 +32,18 @@ jobs:
           file: ./restapi-dotnet/src/Dockerfile
           context: ./restapi-dotnet/src
           
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 887656ef-a8db-4cb2-9786-13f9b3686d34.cr.cloud.ru/evolution-restapi-dotnet:${{ github.sha }}
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+
+      - name: Upload Trivy scan results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: 'trivy-results.sarif' 
+          
       - name: NodeJS - Build and push container image to cloud evolution registry
         uses: docker/build-push-action@v4
         with:
