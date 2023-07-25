@@ -2,9 +2,7 @@ name: Build Docker Image and Push to Evolution Container Registry
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: [ "trivy" ]
 
 jobs:
   build:
