@@ -1,4 +1,4 @@
-# Сценарии использования API Gateway + Container Apps + Container Registry
+# Сценарии использования API Gateway + Container Apps + Container Registry.
 
 ## Пример использования Serverless Container для создания REST API на Go, C#, Python и Java Script
 <img width="827" alt="image" src="https://github.com/CLOUDdotRu/serverless-containers/assets/129149541/676edc07-edfb-4da8-a8af-b3c658034b91">
