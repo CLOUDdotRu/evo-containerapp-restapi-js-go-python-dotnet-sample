@@ -1,7 +1,7 @@
 # Сценарии использования Evolution Container Apps + Artifact Registry
 
 ## Пример использования Evolution Container Apps для создания REST API на Go, C#, Python и Java Script
-<img width="827" alt="image" src="https://github.com/CLOUDdotRu/serverless-containers/assets/129149541/676edc07-edfb-4da8-a8af-b3c658034b91">
+<img width="702" alt="image" src="https://github.com/CLOUDdotRu/evo-containerapp-restapi-js-go-python-dotnet-sample/assets/129149541/0f430e88-7656-4f3c-b40a-76b957f20c75">
 
 
 Пример кода на популярных языках программирования для [статьи документации](https://cloud.ru/ru/docs/container-registry-evolution/ug/topics/tutorials__deploy-rest-api.html). 
