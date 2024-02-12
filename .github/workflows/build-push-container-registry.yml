@@ -28,7 +28,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ${{ env.CR_URI }}/evo-restapi-dotnet:${{ github.sha }}
+          tags: ${{ env.CR_URI }}/evo-restapidotnet:${{ github.sha }}
           file: ./restapi-dotnet/src/Dockerfile
           context: ./restapi-dotnet/src
           
@@ -36,7 +36,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ${{ env.CR_URI }}/evo-restapi-nodejs:${{ github.sha }}
+          tags: ${{ env.CR_URI }}/evo-restapinodejs:${{ github.sha }}
           file: ./restapi-nodejs/src/Dockerfile
           context: ./restapi-nodejs/src
           
@@ -44,7 +44,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ${{ env.CR_URI }}/evo-restapi-python:${{ github.sha }}
+          tags: ${{ env.CR_URI }}/evo-restapipython:${{ github.sha }}
           file: ./restapi-python/src/Dockerfile
           context: ./restapi-python/src
 
@@ -52,6 +52,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ${{ env.CR_URI }}/evo-restapi-go:${{ github.sha }}
+          tags: ${{ env.CR_URI }}/evo-restapigo:${{ github.sha }}
           file: ./restapi-go/src/Dockerfile
           context: ./restapi-go/src
