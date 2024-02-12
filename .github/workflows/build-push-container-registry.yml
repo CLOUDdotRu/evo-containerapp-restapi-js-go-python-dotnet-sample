@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/30 * * * *"
 env:
   CR_URI: 00e4f277-ed62-4685-88d9-71b885bd147b.cr.cloud.ru
 jobs:
