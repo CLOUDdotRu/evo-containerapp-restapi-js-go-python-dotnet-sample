@@ -1,58 +1,57 @@
-name: Build Docker Image and Push to Evolution Container Registry
+name: Build Docker Image and Push to Evolution Artifact Registry
 
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
+env:
+  CR_URI: 00e4f277-ed62-4685-88d9-71b885bd147b.cr.cloud.ru
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout to the branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Log in to cloud evolution container registry
+      - name: Log in to Evolution Artifact Registry
         uses: docker/login-action@v1
         with:
-          registry: 887656ef-a8db-4cb2-9786-13f9b3686d34.cr.cloud.ru
+          registry: ${{ env.CR_URI }}
           username: ${{ secrets.EVO_CR_LOGIN }}
           password: ${{ secrets.EVO_CR_PWD }}
 
-      - name: .NET - Build and push container image to cloud evolution registry
-        uses: docker/build-push-action@v4
+      - name: .NET - Build and push docker image to Evolution Aritfact Registry
+        uses: docker/build-push-action@v5
         with:
           push: true
-          tags: 887656ef-a8db-4cb2-9786-13f9b3686d34.cr.cloud.ru/evolution-restapi-dotnet:${{ github.sha }}
+          tags: ${{ env.CR_URI }}/evo-restapi-dotnet:${{ github.sha }}
           file: ./restapi-dotnet/src/Dockerfile
           context: ./restapi-dotnet/src
           
-      - name: NodeJS - Build and push container image to cloud evolution registry
-        uses: docker/build-push-action@v4
+      - name: NodeJS - Build and push docker image to Evolution Aritfact Registry
+        uses: docker/build-push-action@v5
         with:
           push: true
-          tags: 887656ef-a8db-4cb2-9786-13f9b3686d34.cr.cloud.ru/evolution-restapi-nodejs:${{ github.sha }}
+          tags: ${{ env.CR_URI }}/evo-restapi-nodejs:${{ github.sha }}
           file: ./restapi-nodejs/src/Dockerfile
           context: ./restapi-nodejs/src
           
-      - name: Python - Build and push container image to cloud evolution registry
-        uses: docker/build-push-action@v4
+      - name: Python - Build and push docker image to Evolution Aritfact Registry
+        uses: docker/build-push-action@v5
         with:
           push: true
-          tags: 887656ef-a8db-4cb2-9786-13f9b3686d34.cr.cloud.ru/evolution-restapi-python:${{ github.sha }}
+          tags: ${{ env.CR_URI }}/evo-restapi-python:${{ github.sha }}
           file: ./restapi-python/src/Dockerfile
           context: ./restapi-python/src
 
-      - name: Go - Build and push container image to cloud evolution registry
-        uses: docker/build-push-action@v4
+      - name: Go - Build and push docker image to Evolution Aritfact Registry
+        uses: docker/build-push-action@v5
         with:
           push: true
-          platforms: linux/amd64
-          tags: 887656ef-a8db-4cb2-9786-13f9b3686d34.cr.cloud.ru/evolution-restapigo:${{ github.sha }}
+          tags: ${{ env.CR_URI }}/evo-restapi-go:${{ github.sha }}
           file: ./restapi-go/src/Dockerfile
           context: ./restapi-go/src
