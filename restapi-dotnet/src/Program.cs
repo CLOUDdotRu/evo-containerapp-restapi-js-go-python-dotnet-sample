@@ -42,9 +42,9 @@ record Product(int Id, string Title, string Category)
 {
      public static List<Product> GetAll(){
          var products = new List<Product>(){
-            new Product(1, "Evolution Serverless Containers", "Разработчики"),
+            new Product(1, "Evolution Container Apps", "Разработчики"),
             new Product(2, "Evolution Serverless Functions", "Разработчики"),
-            new Product(3, "Evolution Container Registry", "Разработчики"),
+            new Product(3, "Evolution Artifact Registry", "Разработчики"),
             new Product(4, "Evolution API Gateway", "Разработчики"),
          };
 

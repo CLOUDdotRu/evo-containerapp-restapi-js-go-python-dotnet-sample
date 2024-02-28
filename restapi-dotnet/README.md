@@ -26,9 +26,9 @@ ENTRYPOINT ["dotnet", "productapi_csharp.dll"]
 Соберите образ контейнера с тегом в формате REGISTRY_ID.cr.cloud.ru/REPOSITORY_NAME
 
 Пример:
-```docker build --tag "11111111-1111-1111-1111-11111111.cr.cloud.ru/backend-dotnet" --platform linux/amd64 . ```
+```docker build --tag "helloworld.cr.cloud.ru/backend-dotnet" --platform linux/amd64 . ```
 
 Загрузите образ в реестр контейнеров
 
 Пример:
-```docker push "11111111-1111-1111-1111-11111111.cr.cloud.ru/backend-dotnet"```
+```docker push "helloworld.cr.cloud.ru/backend-dotnet"```
