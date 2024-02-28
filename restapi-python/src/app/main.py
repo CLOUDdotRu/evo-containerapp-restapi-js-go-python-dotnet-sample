@@ -20,15 +20,15 @@ class Product():
          self.category = category
 
 products = [ 
-    Product(1, "Evolution Serverless Containers", "Разработчики"),
+    Product(1, "Evolution Container Apps", "Разработчики"),
     Product(2, "Evolution Serverless Functions", "Разработчики"),
-    Product(3, "Evolution Container Registry", "Разработчики"),
+    Product(3, "Evolution Artifact Registry", "Разработчики"),
     Product(4, "Evolution API Gateway", "Разработчики"),
 ]
 
 @app.get("/")
 def read_root():
-    return {"Serverless Container Python Sample API"}
+    return {"Python Sample API powered by Evolution Container Apps"}
 
 
 @app.get("/products")
