@@ -1,7 +1,7 @@
 const products = [
   {
     id: 1,
-    title: "Evolution Serverless Containers",
+    title: "Evolution Container Apps",
     category: "Разработчики",
   },
   {
@@ -11,7 +11,7 @@ const products = [
   },
   {
     id: 3,
-    title: "Evolution Container Registry",
+    title: "Evolution Artifact Registry",
     category: "Разработчики",
   },
   {
